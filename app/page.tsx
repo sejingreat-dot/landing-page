@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import KPISection from "@/components/KPISection";
 
 export default function Home() {
   useEffect(() => {
@@ -318,26 +319,9 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────── */}
-        {/* 4. STATS                                */}
+        {/* 4. STATS — KPI Section                    */}
         {/* ─────────────────────────────────────── */}
-        <section className="stats-section">
-          <div className="stats-inner">
-            <h2 className="stats-h2">숫자로 증명합니다</h2>
-            <div className="stats-grid">
-              {[
-                { num: "84%", label: "국내 FGI 광고 인지율", delay: "0" },
-                { num: "51.5%", label: "1시간+ 시선 노출 응답", delay: "1" },
-                { num: "49분", label: "해외 평균 슬리브 노출 시간 (AdQuick)", delay: "2" },
-                { num: "100%", label: "1차 MVP 커피 수용률", delay: "3" },
-              ].map((s) => (
-                <div key={s.num} className="stat-card fade-in" data-delay={s.delay}>
-                  <span className="stat-num">{s.num}</span>
-                  <span className="stat-label">{s.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <KPISection />
 
         {/* ─────────────────────────────────────── */}
         {/* 5. WHY US                               */}
