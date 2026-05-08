@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>컵홀더 광고 플랫폼 | Cup Holder Ad Platform</title>
+  <meta name="description" content="광고비로 소비자 커피값을 해결하는 삼각 구조 서비스. 대학생 타깃 컵홀더 광고 파트너를 모집합니다." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,900&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ──────────────────────────────────────────
+       Reset & Custom Properties
+    ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #F5F0E8;
+      --cream-card: #EDE8DF;
+      --cream-deep: #E5DDD0;
+      --espresso:   #2A1506;
+      --espresso-m: #6B3A1E;
+      --warm-gray:  #9B8E82;
+      --accent:     #E8602A;
+      --white:      #FFFFFF;
+      --pad: clamp(24px, 6vw, 88px);
+      --nav-h: 58px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: 'Noto Sans KR', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ──────────────────────────────────────────
+       Scroll Animations
+    ────────────────────────────────────────── */
+    .fi {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s cubic-bezier(.22,.68,0,1.2),
+                  transform 0.8s cubic-bezier(.22,.68,0,1.2);
+    }
+    .fi.in { opacity: 1; transform: translateY(0); }
+    .fi[data-d="1"] { transition-delay: 0.1s; }
+    .fi[data-d="2"] { transition-delay: 0.2s; }
+    .fi[data-d="3"] { transition-delay: 0.3s; }
+    .fi[data-d="4"] { transition-delay: 0.4s; }
+
+    /* ──────────────────────────────────────────
+       Typography Helpers
+    ────────────────────────────────────────── */
+    .eyebrow {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    /* ──────────────────────────────────────────
+       Navigation
+    ────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(245, 240, 232, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(42, 21, 6, 0.07);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      height: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--espresso);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--espresso);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      background: var(--espresso);
+      color: var(--cream) !important;
+      opacity: 1 !important;
+      padding: 7px 20px !important;
+      border-radius: 100px;
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--espresso-m) !important; }
+
+    /* ──────────────────────────────────────────
+       Hero
+    ────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--nav-h) + 72px) var(--pad) 80px;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.85rem, 3.8vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+      max-width: 520px;
+    }
+
+    .hero-sub {
+      font-size: 0.975rem;
+      color: var(--espresso-m);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 2.25rem;
+      font-weight: 300;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(42, 21, 6, 0.06);
+      border: 1px solid rgba(42, 21, 6, 0.13);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      color: var(--espresso);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-photo {
+      background:
+        radial-gradient(ellipse at 28% 38%, rgba(139, 84, 44, 0.72) 0%, transparent 52%),
+        radial-gradient(ellipse at 72% 72%, rgba(196, 148, 96, 0.5) 0%, transparent 48%),
+        radial-gradient(ellipse at 55% 20%, rgba(232, 210, 176, 0.6) 0%, transparent 40%),
+        linear-gradient(152deg, #B8845A 0%, #C9996A 18%, #DDB882 35%, #EDD5A8 55%, #F2E8D0 72%, #E8DCC4 88%, #D8CBAD 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle texture overlay on hero photo */
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 2px,
+          rgba(42,21,6,0.018) 2px,
+          rgba(42,21,6,0.018) 4px
+        );
+    }
+
+    /* small coffee-ring decorative element */
+    .hero-photo-deco {
+      position: absolute;
+      bottom: 14%;
+      left: 12%;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 22px solid rgba(42,21,6,0.12);
+      box-shadow:
+        0 0 0 10px rgba(42,21,6,0.06),
+        inset 0 0 0 14px rgba(245,240,232,0.08);
+    }
+
+    /* ──────────────────────────────────────────
+       Section shared
+    ────────────────────────────────────────── */
+    .section { padding: 108px 0; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* ──────────────────────────────────────────
+       Problem
+    ────────────────────────────────────────── */
+    .problem-section { padding: 108px 0 0; background: var(--cream); }
+
+    .problem-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 560px;
+      margin-bottom: 3.5rem;
+    }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .problem-card {
+      padding: 2.5rem;
+      border-radius: 3px;
+    }
+    .problem-card.light { background: var(--cream-card); }
+    .problem-card.dark  { background: var(--espresso); color: var(--cream); }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .light .card-tag { background: rgba(42,21,6,0.09); color: var(--espresso); }
+    .dark  .card-tag { background: rgba(245,240,232,0.14); color: var(--cream); }
+
+    .card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.875rem;
+    }
+    .dark .card-title { color: var(--cream); }
+
+    .card-body {
+      font-size: 0.88rem;
+      line-height: 1.78;
+      font-weight: 300;
+    }
+    .light .card-body { color: var(--espresso-m); }
+    .dark  .card-body { color: rgba(245,240,232,0.72); }
+
+    .problem-callout {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem var(--pad);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    /* ──────────────────────────────────────────
+       Solution
+    ────────────────────────────────────────── */
+    .solution-section {
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .solution-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 3.5rem;
+      max-width: 520px;
+    }
+
+    .solution-diagram {
+      max-width: 620px;
+      margin: 0 auto 4.5rem;
+      display: block;
+    }
+
+    .solution-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding-top: 0.5rem;
+    }
+
+    .benefit-col-title {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .benefit-list { list-style: none; }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(245, 240, 232, 0.78);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.09);
+      line-height: 1.65;
+    }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-list li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+      font-weight: 600;
+    }
+    .benefit-list strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* ──────────────────────────────────────────
+       Stats
+    ────────────────────────────────────────── */
+    .stats-section { background: var(--cream); }
+
+    .stats-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .stats-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+      font-weight: 600;
+      color: var(--espresso);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(42, 21, 6, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .stat-card {
+      padding: 3rem 1.75rem;
+      text-align: center;
+      border-right: 1px solid rgba(42, 21, 6, 0.1);
+    }
+    .stat-card:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      line-height: 1.55;
+      display: block;
+    }
+
+    /* ──────────────────────────────────────────
+       MVP Result
+    ────────────────────────────────────────── */
+    .mvp-section { background: var(--cream); }
+
+    .mvp-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .mvp-date {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--warm-gray);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.4rem;
+      display: block;
+    }
+
+    .mvp-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(2rem, 3.8vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 2.75rem;
+    }
+
+    .mvp-table { width: 100%; border-collapse: collapse; margin-bottom: 2.25rem; }
+    .mvp-table tr { border-bottom: 1px solid rgba(42,21,6,0.09); }
+    .mvp-table tr:first-child { border-top: 1px solid rgba(42,21,6,0.09); }
+
+    .mvp-table td {
+      padding: 1.05rem 0;
+      font-size: 0.875rem;
+      vertical-align: top;
+    }
+    .mvp-table .col-item {
+      color: var(--warm-gray);
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: 28%;
+      padding-right: 1rem;
+      padding-top: 1.1rem;
+    }
+    .mvp-table .col-result {
+      font-weight: 600;
+      color: var(--espresso);
+      font-size: 1rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .mvp-table .col-note {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--warm-gray);
+      font-weight: 300;
+      line-height: 1.55;
+    }
+
+    .mvp-footnote {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* CSS collage placeholder */
+    .mvp-collage {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: 220px 110px;
+      gap: 5px;
+      border-radius: 3px;
+      overflow: hidden;
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+
+    .mvp-cell { border-radius: 1px; }
+    .mvp-cell-1 {
+      grid-row: span 2;
+      background: linear-gradient(155deg, #8B5E3C 0%, #B8845A 40%, #C49A6C 75%, #D4AE88 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvp-cell-1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-30deg, transparent, transparent 3px, rgba(42,21,6,0.04) 3px, rgba(42,21,6,0.04) 6px);
+    }
+    .mvp-cell-2 {
+      background: linear-gradient(145deg, #D4A574 0%, #E8C89A 50%, #F0D5B0 100%);
+    }
+    .mvp-cell-3 {
+      background: linear-gradient(145deg, #5C3A1E 0%, #8B5E3C 60%, #A87848 100%);
+    }
+
+    /* ──────────────────────────────────────────
+       Contact
+    ────────────────────────────────────────── */
+    .contact-section {
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .contact-inner {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .contact-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      color: rgba(245,240,232,0.62);
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 2.75rem;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.45);
+    }
+
+    .form-input {
+      background: rgba(245,240,232,0.07);
+      border: 1.5px solid rgba(245,240,232,0.14);
+      border-radius: 3px;
+      padding: 12px 14px;
+      color: var(--cream);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input::placeholder { color: rgba(245,240,232,0.28); }
+    .form-input:focus { outline: none; border-color: var(--accent); }
+
+    textarea.form-input {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 0.375rem;
+    }
+    .form-submit:hover { background: var(--cream-card); }
+    .form-submit:active { transform: scale(0.99); }
+
+    /* ──────────────────────────────────────────
+       Footer
+    ────────────────────────────────────────── */
+    footer {
+      background: var(--espresso);
+      padding: 2rem var(--pad);
+      text-align: center;
+      border-top: 1px solid rgba(245,240,232,0.07);
+    }
+    footer p {
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.28);
+      letter-spacing: 0.04em;
+    }
+
+    /* ──────────────────────────────────────────
+       Mobile — ≤768px
+    ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      /* nav: hide center links, keep logo + CTA */
+      .nav-links li:not(:last-child) { display: none; }
+
+      /* hero stacks */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 46vw;
+      }
+      .hero-text {
+        padding: calc(var(--nav-h) + 48px) var(--pad) 48px;
+      }
+      .hero-photo { min-height: 46vw; }
+
+      /* section spacing */
+      .section { padding: 72px 0; }
+      .problem-section { padding: 72px 0 0; }
+
+      /* problem cards stack */
+      .problem-cards { grid-template-columns: 1fr; }
+
+      /* solution benefits stack */
+      .solution-benefits {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      /* stats: 2 × 2 grid */
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-card:nth-child(2) { border-right: none; }
+      .stat-card:nth-child(3) {
+        border-top: 1px solid rgba(42,21,6,0.1);
+      }
+      .stat-card:nth-child(4) {
+        border-right: none;
+        border-top: 1px solid rgba(42,21,6,0.1);
+      }
+      .stat-card { padding: 2.25rem 1.25rem; }
+
+      /* mvp stacks */
+      .mvp-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .mvp-collage {
+        position: static;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 160px 80px;
+        order: -1;
+      }
+
+      /* contact form row */
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-pills { flex-direction: column; align-items: flex-start; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- NAV                                     -->
+  <!-- ─────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="주 내비게이션">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">컵홀더</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#problem">문제</a></li>
+        <li><a href="#solution">솔루션</a></li>
+        <li><a href="#mvp">MVP 결과</a></li>
+        <li><a href="#contact" class="nav-cta">광고 문의하기</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 1. HERO                                 -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="hero" aria-label="히어로">
+    <div class="hero-text">
+      <span class="eyebrow fi">Cup Holder Ad Platform</span>
+      <h1 class="hero-headline fi" data-d="1">
+        1~3초 스킵 없이, 49분 동안 타깃 손에 직접 닿습니다
+      </h1>
+      <p class="hero-sub fi" data-d="2">
+        광고비로 소비자 커피값을 해결하는 삼각 구조 서비스
+      </p>
+      <div class="hero-pills fi" data-d="3" role="list">
+        <span class="pill" role="listitem">인지율 84%</span>
+        <span class="pill" role="listitem">노출 49분</span>
+        <span class="pill" role="listitem">수용률 100%</span>
+      </div>
+    </div>
+
+    <div class="hero-photo" aria-hidden="true">
+      <div class="hero-photo-deco"></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 2. PROBLEM                              -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="problem-section" id="problem" aria-labelledby="problem-title">
+    <div class="container">
+      <span class="eyebrow fi">The Problem</span>
+      <h2 class="problem-h2 fi" data-d="1" id="problem-title">
+        광고주에게 &#39;오래, 가깝게&#39; 닿는 수단이 없다
+      </h2>
+
+      <div class="problem-cards">
+        <div class="problem-card light fi" data-d="1">
+          <span class="card-tag">온라인 광고</span>
+          <h3 class="card-title">1~3초 만에 스킵</h3>
+          <p class="card-body">
+            인스타·유튜브 광고는 스킵 버튼이 뜨는 순간 이탈합니다. 막대한 예산을 써도 기억에 남지 않고, 노출 1회당 비용은 계속 오릅니다.
+          </p>
+        </div>
+
+        <div class="problem-card dark fi" data-d="2">
+          <span class="card-tag">오프라인 광고</span>
+          <h3 class="card-title" style="color:var(--cream)">물리적 거리, 추적 불가</h3>
+          <p class="card-body">
+            전광판·지하철·현수막은 소비자와의 물리적 거리로 관여도가 낮습니다. 성과 데이터 수집 자체가 불가능해 ROI 측정도 어렵습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-callout fi" role="note">
+      결정적 공백 — &#39;1분 이상 자발적으로 광고를 보는&#39; 오프라인 고관여 매체가 없음
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 3. SOLUTION                             -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="solution-section section" id="solution" aria-labelledby="solution-title">
+    <div class="container">
+      <span class="eyebrow fi" style="color:rgba(245,240,232,0.45)">Our Solution</span>
+      <h2 class="solution-h2 fi" data-d="1" id="solution-title">
+        광고비로 커피를, 커피로 광고를
+      </h2>
+
+      <!-- Triangle Flow SVG Diagram -->
+      <svg
+        class="solution-diagram fi"
+        data-d="2"
+        viewBox="0 0 620 400"
+        role="img"
+        aria-label="삼각 구조 다이어그램: 광고주가 광고비를 지불하면 플랫폼이 컵홀더를 배포하고 소비자는 49분 노출로 광고주에게 피드백됩니다"
+      >
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#E8602A"/>
+          </marker>
+          <!-- textPath routes for diagonal labels -->
+          <path id="lp" d="M 148 316 L 264 104"/>
+          <path id="rp" d="M 356 104 L 472 316"/>
+        </defs>
+
+        <!-- Faint triangle outline -->
+        <polygon
+          points="310,64 100,344 520,344"
+          fill="rgba(245,240,232,0.03)"
+          stroke="rgba(232,96,42,0.2)"
+          stroke-width="1.5"
+          stroke-dasharray="7,5"
+        />
+
+        <!-- Arrows -->
+        <line x1="154" y1="318" x2="258" y2="111"
+              stroke="#E8602A" stroke-width="2"
+              marker-end="url(#arr)"/>
+        <line x1="362" y1="111" x2="466" y2="318"
+              stroke="#E8602A" stroke-width="2"
+              marker-end="url(#arr)"/>
+        <line x1="434" y1="368" x2="186" y2="368"
+              stroke="#E8602A" stroke-width="1.75"
+              marker-end="url(#arr)"/>
+
+        <!-- Diagonal labels via textPath -->
+        <text fill="rgba(245,240,232,0.52)" font-size="12.5"
+              font-family="Noto Sans KR, system-ui, sans-serif" font-weight="400">
+          <textPath href="#lp" startOffset="14%">광고비 지불</textPath>
+        </text>
+        <text fill="rgba(245,240,232,0.52)" font-size="12.5"
+              font-family="Noto Sans KR, system-ui, sans-serif" font-weight="400">
+          <textPath href="#rp" startOffset="12%">컵홀더 배포</textPath>
+        </text>
+
+        <!-- Bottom label -->
+        <text x="310" y="393" text-anchor="middle"
+              fill="rgba(245,240,232,0.52)" font-size="12.5"
+              font-family="Noto Sans KR, system-ui, sans-serif" font-weight="400">
+          자발적 49분 노출
+        </text>
+
+        <!-- Node: 플랫폼 (top) -->
+        <ellipse cx="310" cy="82" rx="96" ry="32" fill="#F5F0E8"/>
+        <text x="310" y="90" text-anchor="middle"
+              fill="#2A1506" font-size="18" font-weight="600"
+              font-family="Noto Sans KR, system-ui, sans-serif">플랫폼</text>
+
+        <!-- Node: 광고주 (bottom left) -->
+        <ellipse cx="100" cy="344" rx="94" ry="32" fill="#F5F0E8"/>
+        <text x="100" y="352" text-anchor="middle"
+              fill="#2A1506" font-size="18" font-weight="600"
+              font-family="Noto Sans KR, system-ui, sans-serif">광고주</text>
+
+        <!-- Node: 소비자 (bottom right) -->
+        <ellipse cx="520" cy="344" rx="94" ry="32" fill="#E8602A"/>
+        <text x="520" y="352" text-anchor="middle"
+              fill="#ffffff" font-size="18" font-weight="600"
+              font-family="Noto Sans KR, system-ui, sans-serif">소비자</text>
+      </svg>
+
+      <!-- Benefit columns -->
+      <div class="solution-benefits">
+        <div class="fi" data-d="2">
+          <p class="benefit-col-title">광고주가 얻는 것</p>
+          <ul class="benefit-list">
+            <li><strong>거부감 없는 노출</strong> — 소비자가 직접 쥐는 매체</li>
+            <li><strong>국내 First Mover</strong> — 동일 포맷 사례 0건</li>
+            <li><strong>QR 성과 측정</strong> — 클릭률·체류시간 추적</li>
+          </ul>
+        </div>
+
+        <div class="fi" data-d="3">
+          <p class="benefit-col-title">소비자가 얻는 것</p>
+          <ul class="benefit-list">
+            <li><strong>무료 커피</strong> — 비용 없는 혜택</li>
+            <li><strong>브랜드 경험</strong> — 자연스러운 참여</li>
+            <li><strong>QR 혜택 쿠폰</strong> — 인터랙티브 참여</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 4. KEY STATS                            -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="stats-section section" id="stats" aria-labelledby="stats-title">
+    <div class="container">
+      <div class="stats-header fi">
+        <span class="eyebrow" style="margin-bottom:0.5rem">Key Metrics</span>
+        <h2 class="stats-section-title" id="stats-title">핵심 수치</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card fi">
+          <span class="stat-num">84%</span>
+          <span class="stat-label">국내 FGI<br>광고 인지율</span>
+        </div>
+        <div class="stat-card fi" data-d="1">
+          <span class="stat-num">51.5%</span>
+          <span class="stat-label">1시간+<br>시선 노출 응답</span>
+        </div>
+        <div class="stat-card fi" data-d="2">
+          <span class="stat-num">49분</span>
+          <span class="stat-label">해외 평균<br>슬리브 노출 (AdQuick)</span>
+        </div>
+        <div class="stat-card fi" data-d="3">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">1차 MVP<br>커피 수용률</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 5. MVP RESULT                           -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="mvp-section section" id="mvp" aria-labelledby="mvp-title">
+    <div class="container">
+      <span class="eyebrow fi">1차 검증 결과</span>
+
+      <div class="mvp-inner">
+        <!-- Left: text + table -->
+        <div>
+          <span class="mvp-date fi" data-d="1">2025. 04. 28–29&nbsp; ·&nbsp; 숭실대학교 동방</span>
+          <h2 class="mvp-h2 fi" data-d="1" id="mvp-title">18잔, 100% 수용</h2>
+
+          <table class="mvp-table fi" data-d="2" aria-label="MVP 결과 요약">
+            <tbody>
+              <tr>
+                <td class="col-item">커피 수용도</td>
+                <td>
+                  <span class="col-result">100%&ensp;(18/18)</span>
+                  <span class="col-note">무료 커피 자체로 충분한 유인 확인</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-item">컵홀더 인지율</td>
+                <td>
+                  <span class="col-result">84%&ensp;(15/18)</span>
+                  <span class="col-note">별도 안내 없이 자연스럽게 시선 집중</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-item">QR 클릭율</td>
+                <td>
+                  <span class="col-result">44%&ensp;(8/18)</span>
+                  <span class="col-note">온라인 전환 가능성 실증</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="col-item">지불 의향</td>
+                <td>
+                  <span class="col-result">78%&ensp;(14/18)</span>
+                  <span class="col-note">유료 서비스 확장 가능 시그널</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="mvp-footnote fi" data-d="3">
+            → 2차 MVP: 실제 기업 유치 후 학생회관 앞 본격 배포 예정
+          </p>
+        </div>
+
+        <!-- Right: CSS collage -->
+        <div class="mvp-collage fi" data-d="2" aria-hidden="true">
+          <div class="mvp-cell mvp-cell-1"></div>
+          <div class="mvp-cell mvp-cell-2"></div>
+          <div class="mvp-cell mvp-cell-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 6. CONTACT                              -->
+  <!-- ─────────────────────────────────────── -->
+  <section class="contact-section section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-inner">
+        <span class="eyebrow fi" style="color:rgba(245,240,232,0.38)">광고 파트너 신청</span>
+        <h2 class="contact-h2 fi" data-d="1" id="contact-title">
+          지금 첫 번째 광고주가 되어보세요
+        </h2>
+        <p class="contact-sub fi" data-d="2">
+          2차 MVP 파트너를 모집합니다. 대학생 타깃 푸드·배달 브랜드 우선 협의.
+        </p>
+
+        <form class="fi" data-d="2" id="contact-form" novalidate>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="company">회사명</label>
+              <input class="form-input" id="company" name="company"
+                     type="text" placeholder="예) 배달의민족" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-name">담당자명</label>
+              <input class="form-input" id="contact-name" name="contact_name"
+                     type="text" placeholder="홍길동" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">연락처</label>
+            <input class="form-input" id="phone" name="phone"
+                   type="tel" placeholder="010-0000-0000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">문의내용</label>
+            <textarea class="form-input" id="message" name="message"
+                      placeholder="관심 있는 광고 형태, 목표 캠퍼스, 예산 등을 자유롭게 적어주세요."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">문의 보내기</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- FOOTER                                  -->
+  <!-- ─────────────────────────────────────── -->
+  <footer>
+    <p>© 2025 컵홀더 광고 플랫폼&nbsp; ·&nbsp; 창업 동아리 시너지</p>
+  </footer>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- JS: Scroll animations + form            -->
+  <!-- ─────────────────────────────────────── -->
+  <script>
+    /* Scroll fade-in */
+    (function () {
+      const els = document.querySelectorAll('.fi');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('in'));
+        return;
+      }
+      const obs = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+        { threshold: 0.1 }
+      );
+      els.forEach(el => obs.observe(el));
+    })();
+
+    /* Contact form → mailto */
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const company  = (this.company.value       || '').trim();
+      const name     = (this.contact_name.value  || '').trim();
+      const phone    = (this.phone.value         || '').trim();
+      const message  = (this.message.value       || '').trim();
+
+      if (!company || !name || !phone) {
+        alert('회사명, 담당자명, 연락처를 입력해 주세요.');
+        return;
+      }
+
+      const body =
+        '회사명: '   + company  + '\n' +
+        '담당자명: ' + name     + '\n' +
+        '연락처: '   + phone    + '\n\n' +
+        '문의내용:\n' + message;
+
+      window.location.href =
+        'mailto:sejingreat@gmail.com' +
+        '?subject=' + encodeURIComponent('[광고 문의] ' + company) +
+        '&body='    + encodeURIComponent(body);
+    });
+  </script>
+
+</body>
+</html>
