@@ -56,11 +56,11 @@ export default function Home() {
               MVP 검증 완료 · 2차 파트너 모집 중
             </div>
             <h1 className="hero-h1">
-              1~3초 스킵 없이,
+              잠깐이 아닌
               <br />
-              <em>49분 동안</em> 타깃 손에
+              <em>49분</em>동안 <em>경험을</em> 
               <br />
-              직접 닿습니다
+              제공합니다.
             </h1>
             <p className="hero-p">
               컵홀더 광고 플랫폼 — 광고비로 소비자 커피값을 해결하는
@@ -141,10 +141,10 @@ export default function Home() {
             </div>
 
             <div className="problem-callout fade-in">
-              결정적 공백 —{" "}
-              <strong>&#39;1분 이상 자발적으로 광고를 보는&#39;</strong>
-              <br />
-              오프라인 고관여 매체가 없습니다
+              <div className="callout-highlight">
+                <strong>&#39;1분 이상 자발적으로 광고를 보는&#39;</strong>
+              </div>
+              <div className="callout-sub">오프라인 고관여 매체가 없습니다</div>
             </div>
           </div>
         </section>
@@ -195,34 +195,25 @@ export default function Home() {
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
                 </marker>
                 {/* Paths for diagonal text labels */}
-                <path id="lp" d="M 132 344 L 226 114" />
-                <path id="rp" d="M 334 114 L 428 344" />
+                <path id="lp" d="M 155 340 L 220 120" />
+                <path id="rp" d="M 340 120 L 405 340" />
               </defs>
-
-              {/* Background triangle outline */}
-              <polygon
-                points="280,58 100,376 460,376"
-                fill="rgba(244,166,64,0.05)"
-                stroke="rgba(244,166,64,0.18)"
-                strokeWidth="1.5"
-                strokeDasharray="6,4"
-              />
 
               {/* Arrows */}
               <line
-                x1="138"
-                y1="347"
-                x2="224"
-                y2="119"
+                x1="155"
+                y1="340"
+                x2="220"
+                y2="120"
                 stroke="#3D1F0E"
                 strokeWidth="2.5"
                 markerEnd="url(#ah-dark)"
               />
               <line
-                x1="336"
-                y1="119"
-                x2="422"
-                y2="347"
+                x1="340"
+                y1="120"
+                x2="405"
+                y2="340"
                 stroke="#3D1F0E"
                 strokeWidth="2.5"
                 markerEnd="url(#ah-dark)"
@@ -244,7 +235,7 @@ export default function Home() {
                 fontWeight="600"
                 fontFamily="Pretendard, -apple-system, sans-serif"
               >
-                <textPath href="#lp" startOffset="14%">
+                <textPath href="#lp" startOffset="50%" textAnchor="middle" dy="-70">
                   광고비 지불
                 </textPath>
               </text>
@@ -254,7 +245,7 @@ export default function Home() {
                 fontWeight="600"
                 fontFamily="Pretendard, -apple-system, sans-serif"
               >
-                <textPath href="#rp" startOffset="12%">
+                <textPath href="#rp" startOffset="50%" textAnchor="middle" dy="-70">
                   컵홀더 제작·배포
                 </textPath>
               </text>
