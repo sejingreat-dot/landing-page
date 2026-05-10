@@ -40,6 +40,7 @@ export default function Home() {
             <path d="M16 7c1.5.5 1.5 3 0 3" stroke="#555" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           컵홀더 광고
+          <span className="nav-tagline">FREE COFFEE</span>
         </a>
 
         <ul className="nav-links">
@@ -111,8 +112,9 @@ export default function Home() {
         <section className="problem-section" id="problem">
           <div className="section">
             <div className="section-eyebrow">Problem</div>
+            {/* 대안 카피: "스킵되고, 무시되고, 낭비됩니다." */}
             <h2 className="section-h2">
-              광고는 닿지 못하고,
+              광고는 소비자에게 닿지 못하고,
               <br />
               소비자는 혜택을 원합니다.
             </h2>
@@ -126,7 +128,7 @@ export default function Home() {
                 <span className="problem-label">온라인 광고</span>
                 <span className="problem-stat">65%</span>
                 <h3>3초 안에 스킵됩니다</h3>
-                <p>
+                <p style={{ wordBreak: "keep-all" }}>
                   유튜브·인스타그램 광고의 65% 이상이 3초 이내에 스킵됩니다.
                   예산이 클수록 낭비도 커집니다.
                 </p>
@@ -181,54 +183,74 @@ export default function Home() {
             </p>
 
             <svg
-              viewBox="0 0 560 460"
-              style={{ maxWidth: 520, width: "100%", margin: "0 auto", display: "block" }}
-              aria-label="삼각 구조 다이어그램: 광고주 → 플랫폼 → 소비자"
+              viewBox="0 0 560 490"
+              style={{ maxWidth: 540, width: "100%", margin: "0 auto", display: "block" }}
+              aria-label="비즈니스 모델 다이어그램: 광고주 ↔ FREE COFFEE ↔ 소비자"
             >
               <defs>
-                <marker id="ah-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                {/* Forward arrow (end) */}
+                <marker id="ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#1C1208" />
                 </marker>
-                <marker id="ah-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                {/* Backward arrow (start) — auto-start-reverse flips orientation */}
+                <marker id="as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1C1208" />
+                </marker>
+                {/* Accent forward */}
+                <marker id="ae-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
                 </marker>
-                <path id="lp" d="M 132 344 L 226 114" />
-                <path id="rp" d="M 334 114 L 428 344" />
+                {/* Accent backward */}
+                <marker id="as-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
+                </marker>
               </defs>
 
+              {/* Triangle background */}
               <polygon
-                points="280,58 100,376 460,376"
+                points="280,62 96,392 464,392"
                 fill="rgba(244,166,64,0.04)"
                 stroke="#E2D5C6"
                 strokeWidth="1.5"
                 strokeDasharray="6,4"
               />
 
-              <line x1="138" y1="347" x2="224" y2="119" stroke="#1C1208" strokeWidth="2" markerEnd="url(#ah-dark)" />
-              <line x1="336" y1="119" x2="422" y2="347" stroke="#1C1208" strokeWidth="2" markerEnd="url(#ah-dark)" />
-              <line x1="376" y1="400" x2="184" y2="400" stroke="#F4A640" strokeWidth="2" markerEnd="url(#ah-accent)" />
+              {/* ── Left arrow: 광고주 ↔ FREE COFFEE ── */}
+              <line x1="163" y1="372" x2="210" y2="122"
+                stroke="#1C1208" strokeWidth="2"
+                markerStart="url(#as)" markerEnd="url(#ae)" />
+              {/* 광고주 → FREE COFFEE */}
+              <text x="148" y="254" textAnchor="end" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">광고비 지불</text>
+              {/* FREE COFFEE → 광고주 */}
+              <text x="228" y="278" textAnchor="start" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">성과 데이터 제공</text>
 
-              <text fill="#7A6A5A" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
-                <textPath href="#lp" startOffset="14%">광고비 지불</textPath>
-              </text>
-              <text fill="#7A6A5A" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
-                <textPath href="#rp" startOffset="12%">컵홀더 제작·배포</textPath>
-              </text>
-              <text x="280" y="432" textAnchor="middle" fill="#F4A640" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
-                커피 무료 수령
-              </text>
+              {/* ── Right arrow: FREE COFFEE ↔ 소비자 ── */}
+              <line x1="350" y1="122" x2="397" y2="372"
+                stroke="#1C1208" strokeWidth="2"
+                markerStart="url(#as)" markerEnd="url(#ae)" />
+              {/* FREE COFFEE → 소비자 */}
+              <text x="332" y="278" textAnchor="end" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">무료 커피 제공</text>
+              {/* 소비자 → FREE COFFEE */}
+              <text x="413" y="254" textAnchor="start" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">브랜드 노출 40분</text>
 
-              {/* 플랫폼 */}
-              <rect x="184" y="58" width="192" height="54" rx="6" fill="#1C1208" />
-              <text x="280" y="91" textAnchor="middle" fill="white" fontSize="18" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">플랫폼</text>
+              {/* ── Bottom arrow: 광고주 ↔ 소비자 (간접) ── */}
+              <line x1="194" y1="418" x2="368" y2="418"
+                stroke="#F4A640" strokeWidth="2"
+                markerStart="url(#as-a)" markerEnd="url(#ae-a)" />
+              <text x="280" y="410" textAnchor="middle" fill="#F4A640" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">커피 무료 수령 (간접 연결)</text>
 
-              {/* 광고주 */}
-              <rect x="8" y="349" width="184" height="54" rx="6" fill="#1C1208" />
-              <text x="100" y="382" textAnchor="middle" fill="white" fontSize="18" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">광고주</text>
+              {/* ── FREE COFFEE node (top) ── */}
+              <rect x="166" y="50" width="228" height="68" rx="6" fill="#1C1208" />
+              <text x="280" y="78" textAnchor="middle" fill="white" fontSize="14" fontWeight="800" letterSpacing="0.06em" fontFamily="Pretendard, -apple-system, sans-serif">FREE COFFEE</text>
+              <text x="280" y="100" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="11" fontWeight="500" fontFamily="Pretendard, -apple-system, sans-serif">플랫폼</text>
 
-              {/* 소비자 */}
-              <rect x="368" y="349" width="184" height="54" rx="6" fill="#F4A640" />
-              <text x="460" y="382" textAnchor="middle" fill="white" fontSize="18" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">소비자</text>
+              {/* ── 광고주 node (bottom-left) ── */}
+              <rect x="8" y="376" width="178" height="54" rx="6" fill="#1C1208" />
+              <text x="97" y="409" textAnchor="middle" fill="white" fontSize="17" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">광고주</text>
+
+              {/* ── 소비자 node (bottom-right) ── */}
+              <rect x="374" y="376" width="178" height="54" rx="6" fill="#F4A640" />
+              <text x="463" y="409" textAnchor="middle" fill="white" fontSize="17" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">소비자</text>
             </svg>
 
             {/* Service flow visual */}
@@ -254,7 +276,7 @@ export default function Home() {
                       <path d="M31 16.5c2.5 1 2.5 5 0 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   ),
-                  label: "컵홀더 49분 노출",
+                  label: "컵홀더 40분 노출",
                   desc: "들고 다니는 동안 브랜드가 자연스럽게 전달됩니다",
                 },
                 {
@@ -272,14 +294,14 @@ export default function Home() {
                       <rect x="29" y="29" width="4" height="4" rx="0.5" fill="currentColor" />
                     </svg>
                   ),
-                  label: "QR 인터랙션",
+                  label: "QR 인터랙티브 콘텐츠",
                   desc: "스캔으로 참여, 클릭·전환 성과를 측정합니다",
                 },
               ].map((step) => (
                 <div key={step.label} className="flow-step">
                   <div className="flow-icon">{step.icon}</div>
                   <p className="flow-label">{step.label}</p>
-                  <p className="flow-desc">{step.desc}</p>
+                  <p className="flow-desc" style={{ wordBreak: "keep-all" }}>{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -287,57 +309,7 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────── */}
-        {/* 4. METRICS                              */}
-        {/* ─────────────────────────────────────── */}
-        <section className="metrics-section" id="metrics">
-          <div className="metrics-inner">
-            <div className="metrics-header fade-in">
-              <p className="metrics-eyebrow-label">1차 MVP 검증 데이터</p>
-              <h2 className="metrics-headline">직접 실험으로 확인한 숫자입니다.</h2>
-              <p className="metrics-sub-text">2025년 4월 · 숭실대 동방 동아리 18잔 배포</p>
-            </div>
-            <div className="metrics-grid">
-              {[
-                {
-                  eyebrow: "Average exposure",
-                  num: "49",
-                  unit: "분",
-                  label: "평균 광고 노출 시간",
-                  desc: "소비자가 자발적으로 컵홀더를 49분간 지니고 있었습니다. 해외 AdQuick 데이터와 일치.",
-                  delay: "0",
-                },
-                {
-                  eyebrow: "Coffee acceptance",
-                  num: "100",
-                  unit: "%",
-                  label: "커피 수용률",
-                  desc: "무료 커피 제공에 대한 거부감은 거의 없었습니다. 소비자는 기꺼이 광고 컵홀더를 받았습니다.",
-                  delay: "1",
-                },
-                {
-                  eyebrow: "Ad awareness",
-                  num: "84",
-                  unit: "%",
-                  label: "광고 인지율",
-                  desc: "컵홀더를 수령한 소비자의 84%가 광고를 인지했습니다. 국내 FGI 기준 최상위 수준.",
-                  delay: "2",
-                },
-              ].map((m) => (
-                <div key={m.label} className="metric-card fade-in" data-delay={m.delay}>
-                  <div className="metric-eyebrow-tag">{m.eyebrow}</div>
-                  <div className="metric-num">
-                    {m.num}<span className="metric-unit">{m.unit}</span>
-                  </div>
-                  <p className="metric-label">{m.label}</p>
-                  <p className="metric-desc">{m.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────── */}
-        {/* 5. BENEFITS                             */}
+        {/* 4. BENEFITS                             */}
         {/* ─────────────────────────────────────── */}
         <section className="why-section">
           <div className="section">
@@ -377,7 +349,7 @@ export default function Home() {
             <div className="inline-cta fade-in" data-delay="1">
               <div>
                 <p className="inline-cta-title">2차 파트너십을 모집합니다</p>
-                <p className="inline-cta-sub">대학생 타깃 푸드·배달 브랜드 우선 협의</p>
+                <p className="inline-cta-sub">대학생 타깃 브랜드 우선 협의</p>
               </div>
               <a href="#contact" className="btn-primary">
                 문의하기
@@ -404,6 +376,32 @@ export default function Home() {
               <span className="mvp-meta-item">2025년 4월 28–29일</span>
               <span className="mvp-meta-item">동방 동아리 8개 그룹, 18잔 배포</span>
               <span className="mvp-meta-item">광고주: 사주핑 어플</span>
+            </div>
+
+            {/* 사주핑 광고주 쇼케이스 */}
+            <div className="mvp-showcase fade-in">
+              <div className="mvp-showcase-logo">
+                <img
+                  src="/sajuping-logo.png.webp"
+                  alt="사주핑 앱 로고"
+                  className="mvp-showcase-logo-img"
+                />
+                <span className="mvp-showcase-caption">
+                  1차 MVP 광고주
+                  <br />
+                  AI 사주 앱 사주핑
+                </span>
+              </div>
+              <div className="mvp-showcase-main">
+                <img
+                  src="/sajuping-cupholder.png.webp"
+                  alt="사주핑 × 컵홀더 광고 1차 MVP 도안"
+                  className="mvp-showcase-img"
+                />
+                <span className="mvp-showcase-caption" style={{ display: "block", marginTop: "0.5rem", textAlign: "center" }}>
+                  실제 배포된 컵홀더 도안 — 2025년 4월, 숭실대학교
+                </span>
+              </div>
             </div>
 
             <div className="mvp-results-grid fade-in" data-delay="1">
@@ -513,8 +511,6 @@ export default function Home() {
             </h2>
             <p className="contact-sub">
               대학생 타깃 푸드·배달 브랜드를 우선으로 협의합니다.
-              <br />
-              2차 파트너십은 소수로 진행됩니다.
             </p>
 
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
