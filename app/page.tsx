@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 
@@ -182,76 +182,68 @@ export default function Home() {
               컵홀더가 브랜드를 49분 전달합니다.
             </p>
 
-            <svg
-              viewBox="0 0 560 490"
-              style={{ maxWidth: 540, width: "100%", margin: "0 auto", display: "block" }}
-              aria-label="비즈니스 모델 다이어그램: 광고주 ↔ FREE COFFEE ↔ 소비자"
-            >
-              <defs>
-                {/* Forward arrow (end) */}
-                <marker id="ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1C1208" />
-                </marker>
-                {/* Backward arrow (start) — auto-start-reverse flips orientation */}
-                <marker id="as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1C1208" />
-                </marker>
-                {/* Accent forward */}
-                <marker id="ae-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
-                </marker>
-                {/* Accent backward */}
-                <marker id="as-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
-                </marker>
-              </defs>
+            {/* Desktop / Mobile triangle diagram */}
+            <div className="bm-wrap">
+              <div className="bm-desktop">
+                <svg className="bm-lines" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <marker id="bm-ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C4B5A5" />
+                    </marker>
+                    <marker id="bm-as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C4B5A5" />
+                    </marker>
+                    <marker id="bm-ae-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
+                    </marker>
+                    <marker id="bm-as-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
+                    </marker>
+                  </defs>
+                  <polygon points="280,72 78,432 482,432" fill="rgba(244,166,64,0.04)" stroke="#E2D5C6" strokeWidth="1.5" strokeDasharray="5,4" />
+                  <line x1="130" y1="404" x2="225" y2="72" stroke="#C4B5A5" strokeWidth="2" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
+                  <line x1="335" y1="72" x2="430" y2="404" stroke="#C4B5A5" strokeWidth="2" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
+                  <line x1="156" y1="450" x2="404" y2="450" stroke="#F4A640" strokeWidth="1.8" strokeDasharray="5,3" markerStart="url(#bm-as-a)" markerEnd="url(#bm-ae-a)" />
+                </svg>
 
-              {/* Triangle background */}
-              <polygon
-                points="280,62 96,392 464,392"
-                fill="rgba(244,166,64,0.04)"
-                stroke="#E2D5C6"
-                strokeWidth="1.5"
-                strokeDasharray="6,4"
-              />
+                <div className="bm-node bm-node--fc">
+                  <span className="bm-fc-title">FREE COFFEE</span>
+                  <span className="bm-fc-sub">플랫폼</span>
+                </div>
+                <div className="bm-node bm-node--adv"><span>광고주</span></div>
+                <div className="bm-node bm-node--con"><span>소비자</span></div>
 
-              {/* ── Left arrow: 광고주 ↔ FREE COFFEE ── */}
-              <line x1="163" y1="372" x2="210" y2="122"
-                stroke="#1C1208" strokeWidth="2"
-                markerStart="url(#as)" markerEnd="url(#ae)" />
-              {/* 광고주 → FREE COFFEE */}
-              <text x="148" y="254" textAnchor="end" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">광고비 지불</text>
-              {/* FREE COFFEE → 광고주 */}
-              <text x="228" y="278" textAnchor="start" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">성과 데이터 제공</text>
+                <div className="bm-pill bm-pill--1">📊 성과 데이터</div>
+                <div className="bm-pill bm-pill--2">💰 광고비 지불</div>
+                <div className="bm-pill bm-pill--3">☕ 무료 커피</div>
+                <div className="bm-pill bm-pill--4">⏱ 브랜드 노출 40분</div>
+                <div className="bm-pill bm-pill--5">🎯 커피 무료 수령</div>
+              </div>
 
-              {/* ── Right arrow: FREE COFFEE ↔ 소비자 ── */}
-              <line x1="350" y1="122" x2="397" y2="372"
-                stroke="#1C1208" strokeWidth="2"
-                markerStart="url(#as)" markerEnd="url(#ae)" />
-              {/* FREE COFFEE → 소비자 */}
-              <text x="332" y="278" textAnchor="end" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">무료 커피 제공</text>
-              {/* 소비자 → FREE COFFEE */}
-              <text x="413" y="254" textAnchor="start" fill="#7A6A5A" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">브랜드 노출 40분</text>
-
-              {/* ── Bottom arrow: 광고주 ↔ 소비자 (간접) ── */}
-              <line x1="194" y1="418" x2="368" y2="418"
-                stroke="#F4A640" strokeWidth="2"
-                markerStart="url(#as-a)" markerEnd="url(#ae-a)" />
-              <text x="280" y="410" textAnchor="middle" fill="#F4A640" fontSize="11" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">커피 무료 수령 (간접 연결)</text>
-
-              {/* ── FREE COFFEE node (top) ── */}
-              <rect x="166" y="50" width="228" height="68" rx="6" fill="#1C1208" />
-              <text x="280" y="78" textAnchor="middle" fill="white" fontSize="14" fontWeight="800" letterSpacing="0.06em" fontFamily="Pretendard, -apple-system, sans-serif">FREE COFFEE</text>
-              <text x="280" y="100" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="11" fontWeight="500" fontFamily="Pretendard, -apple-system, sans-serif">플랫폼</text>
-
-              {/* ── 광고주 node (bottom-left) ── */}
-              <rect x="8" y="376" width="178" height="54" rx="6" fill="#1C1208" />
-              <text x="97" y="409" textAnchor="middle" fill="white" fontSize="17" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">광고주</text>
-
-              {/* ── 소비자 node (bottom-right) ── */}
-              <rect x="374" y="376" width="178" height="54" rx="6" fill="#F4A640" />
-              <text x="463" y="409" textAnchor="middle" fill="white" fontSize="17" fontWeight="700" fontFamily="Pretendard, -apple-system, sans-serif">소비자</text>
-            </svg>
+              <div className="bm-mobile">
+                <div className="bm-m-node bm-m-node--fc">
+                  <b>FREE COFFEE</b>
+                  <span>플랫폼</span>
+                </div>
+                <div className="bm-m-mid">
+                  <div className="bm-m-col">
+                    <div className="bm-m-pill">💰 광고비 지불</div>
+                    <div className="bm-m-arrow">↕</div>
+                    <div className="bm-m-pill">📊 성과 데이터</div>
+                  </div>
+                  <div className="bm-m-col">
+                    <div className="bm-m-pill">☕ 무료 커피</div>
+                    <div className="bm-m-arrow">↕</div>
+                    <div className="bm-m-pill">⏱ 브랜드 노출</div>
+                  </div>
+                </div>
+                <div className="bm-m-bottom">
+                  <div className="bm-m-node bm-m-node--adv"><span>광고주</span></div>
+                  <div className="bm-m-node bm-m-node--con"><span>소비자</span></div>
+                </div>
+                <div className="bm-m-indirect">🎯 커피 무료 수령 (간접 연결)</div>
+              </div>
+            </div>
 
             {/* Service flow visual */}
             <div className="flow-steps fade-in" data-delay="2">
