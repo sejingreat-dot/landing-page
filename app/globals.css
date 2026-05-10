@@ -55,7 +55,7 @@ body {
 /* ── Layout ── */
 .section {
   padding: 5rem 1.5rem;
-  max-width: 1100px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -254,8 +254,13 @@ body {
 }
 
 .hero-p {
+<<<<<<< HEAD
   font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
   color: rgba(253, 236, 210, 0.6);
+=======
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #6B3A22;
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
   line-height: 1.75;
   max-width: 540px;
   margin-bottom: 2.5rem;
@@ -422,6 +427,7 @@ body {
 .problem-callout {
   background: var(--dark-warm);
   color: white;
+<<<<<<< HEAD
   border-radius: 8px;
   padding: 1.375rem 1.75rem;
   font-size: 0.9375rem;
@@ -436,6 +442,30 @@ body {
 
 /* ── Solution ── */
 .solution-section { background: var(--surface); }
+=======
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  line-height: 1.8;
+  border-left: 4px solid #F4A640;
+}
+
+.callout-highlight {
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  font-weight: 800;
+  color: #F4A640;
+  margin-bottom: 0.8rem;
+}
+
+.callout-sub {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 700;
+  color: white;
+}
+
+/* ── Solution section ── */
+.solution-section { background: #FFF8F0; }
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
 
 /* ── Flow steps ── */
 .flow-steps {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import KPISection from "@/components/KPISection";
 
 export default function Home() {
   useEffect(() => {
@@ -62,6 +63,33 @@ export default function Home() {
               <span className="hero-eyebrow-dot" />
               2025 1차 MVP 검증 완료 · 2차 파트너 모집 중
             </div>
+<<<<<<< HEAD
+=======
+            <h1 className="hero-h1">
+              잠깐이 아닌
+              <br />
+              <em>49분</em>동안 <em>경험을</em> 
+              <br />
+              제공합니다.
+            </h1>
+            <p className="hero-p">
+              컵홀더 광고 플랫폼 — 광고비로 소비자 커피값을 해결하는
+              삼각 구조 서비스
+            </p>
+            <a href="#contact" className="hero-cta">
+              광고 문의하기
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path
+                  d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
 
             <h1 className="hero-h1">
               광고가 소비자 손에
@@ -140,9 +168,16 @@ export default function Home() {
             </div>
 
             <div className="problem-callout fade-in">
+<<<<<<< HEAD
               소비자가{" "}
               <strong>1분 이상 자발적으로 집중하는 오프라인 광고 매체</strong>
               가 없습니다.
+=======
+              <div className="callout-highlight">
+                <strong>&#39;1분 이상 자발적으로 광고를 보는&#39;</strong>
+              </div>
+              <div className="callout-sub">오프라인 고관여 매체가 없습니다</div>
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
             </div>
           </div>
         </section>
@@ -176,6 +211,7 @@ export default function Home() {
                 <marker id="ah-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
                 </marker>
+<<<<<<< HEAD
                 <path id="lp" d="M 132 344 L 226 114" />
                 <path id="rp" d="M 334 114 L 428 344" />
               </defs>
@@ -197,6 +233,62 @@ export default function Home() {
               </text>
               <text fill="#7A6A5A" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
                 <textPath href="#rp" startOffset="12%">컵홀더 제작·배포</textPath>
+=======
+                {/* Paths for diagonal text labels */}
+                <path id="lp" d="M 155 340 L 220 120" />
+                <path id="rp" d="M 340 120 L 405 340" />
+              </defs>
+
+              {/* Arrows */}
+              <line
+                x1="155"
+                y1="340"
+                x2="220"
+                y2="120"
+                stroke="#3D1F0E"
+                strokeWidth="2.5"
+                markerEnd="url(#ah-dark)"
+              />
+              <line
+                x1="340"
+                y1="120"
+                x2="405"
+                y2="340"
+                stroke="#3D1F0E"
+                strokeWidth="2.5"
+                markerEnd="url(#ah-dark)"
+              />
+              <line
+                x1="376"
+                y1="400"
+                x2="184"
+                y2="400"
+                stroke="#F4A640"
+                strokeWidth="2.5"
+                markerEnd="url(#ah-accent)"
+              />
+
+              {/* Arrow labels via textPath (diagonal) */}
+              <text
+                fill="#3D1F0E"
+                fontSize="13"
+                fontWeight="600"
+                fontFamily="Pretendard, -apple-system, sans-serif"
+              >
+                <textPath href="#lp" startOffset="50%" textAnchor="middle" dy="-70">
+                  광고비 지불
+                </textPath>
+              </text>
+              <text
+                fill="#3D1F0E"
+                fontSize="13"
+                fontWeight="600"
+                fontFamily="Pretendard, -apple-system, sans-serif"
+              >
+                <textPath href="#rp" startOffset="50%" textAnchor="middle" dy="-70">
+                  컵홀더 제작·배포
+                </textPath>
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
               </text>
               <text x="280" y="432" textAnchor="middle" fill="#F4A640" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
                 커피 무료 수령
@@ -271,8 +363,9 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────── */}
-        {/* 4. STATS                                */}
+        {/* 4. STATS — KPI Section                    */}
         {/* ─────────────────────────────────────── */}
+<<<<<<< HEAD
         <section className="stats-section">
           <div className="stats-grid">
             {[
@@ -290,6 +383,9 @@ export default function Home() {
             ))}
           </div>
         </section>
+=======
+        <KPISection />
+>>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
 
         {/* ─────────────────────────────────────── */}
         {/* 5. BENEFITS                             */}
