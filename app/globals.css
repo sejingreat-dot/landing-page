@@ -254,13 +254,8 @@ body {
 }
 
 .hero-p {
-<<<<<<< HEAD
   font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
   color: rgba(253, 236, 210, 0.6);
-=======
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  color: #6B3A22;
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
   line-height: 1.75;
   max-width: 540px;
   margin-bottom: 2.5rem;
@@ -382,6 +377,11 @@ body {
   .problem-grid { grid-template-columns: 1fr; }
 }
 
+.problem-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+  .problem-grid-3 { grid-template-columns: 1fr; }
+}
+
 .problem-card {
   background: var(--white);
   padding: 2rem;
@@ -427,7 +427,6 @@ body {
 .problem-callout {
   background: var(--dark-warm);
   color: white;
-<<<<<<< HEAD
   border-radius: 8px;
   padding: 1.375rem 1.75rem;
   font-size: 0.9375rem;
@@ -442,30 +441,6 @@ body {
 
 /* ── Solution ── */
 .solution-section { background: var(--surface); }
-=======
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  line-height: 1.8;
-  border-left: 4px solid #F4A640;
-}
-
-.callout-highlight {
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
-  font-weight: 800;
-  color: #F4A640;
-  margin-bottom: 0.8rem;
-}
-
-.callout-sub {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  font-weight: 700;
-  color: white;
-}
-
-/* ── Solution section ── */
-.solution-section { background: #FFF8F0; }
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
 
 /* ── Flow steps ── */
 .flow-steps {
@@ -518,65 +493,127 @@ body {
   line-height: 1.65;
 }
 
-/* ── Stats (warm cream) ── */
-.stats-section {
-  background: var(--surface);
+/* ── Metrics (Apple-style oversized typography) ── */
+.metrics-section {
+  background: var(--white);
+  padding: 5rem 1.5rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1100px;
+.metrics-inner {
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.stat-item {
-  padding: 3.5rem 1.5rem;
-  border-right: 1px solid var(--border);
+.metrics-header {
   text-align: center;
+  margin-bottom: 3rem;
+}
+
+.metrics-eyebrow-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.metrics-headline {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.375rem;
+}
+
+.metrics-sub-text {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+}
+
+.metric-card {
+  background: var(--white);
+  padding: 2.75rem 1.75rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
   position: relative;
 }
-.stat-item::before {
+.metric-card:last-child { border-right: none; }
+.metric-card:hover { background: var(--surface); }
+.metric-card::before {
   content: '';
   position: absolute;
   top: 0; left: 50%; transform: translateX(-50%);
-  width: 24px; height: 2px;
+  width: 32px; height: 2px;
   background: var(--accent);
   opacity: 0;
   transition: opacity 0.2s;
 }
-.stat-item:hover::before { opacity: 1; }
-.stat-item:last-child { border-right: none; }
+.metric-card:hover::before { opacity: 1; }
 
-@media (max-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat-item:nth-child(2) { border-right: none; }
-  .stat-item:nth-child(3) {
-    border-top: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
-  .stat-item:nth-child(4) { border-top: 1px solid var(--border); }
+@media (max-width: 640px) {
+  .metric-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .metric-card:last-child { border-bottom: none; }
 }
 
-.stat-num {
-  display: block;
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
+.metric-eyebrow-tag {
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.metric-num {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
   font-weight: 900;
   color: var(--black);
   line-height: 1;
-  letter-spacing: -0.04em;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.08em;
 }
-.stat-num span { color: var(--accent); }
 
-.stat-label {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  line-height: 1.5;
+.metric-unit {
+  font-size: 0.38em;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0em;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.metric-desc {
+  font-size: 0.775rem;
+  color: var(--text-tertiary);
+  line-height: 1.6;
 }
 
 /* ── Benefits ── */

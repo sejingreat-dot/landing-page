@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import KPISection from "@/components/KPISection";
 
 export default function Home() {
   useEffect(() => {
@@ -63,56 +62,30 @@ export default function Home() {
               <span className="hero-eyebrow-dot" />
               2025 1차 MVP 검증 완료 · 2차 파트너 모집 중
             </div>
-<<<<<<< HEAD
-=======
+
             <h1 className="hero-h1">
-              잠깐이 아닌
+              브랜드 광고로,
               <br />
-              <em>49분</em>동안 <em>경험을</em> 
+              대학생에게 <em>무료 커피</em>를
               <br />
               제공합니다.
             </h1>
-            <p className="hero-p">
-              컵홀더 광고 플랫폼 — 광고비로 소비자 커피값을 해결하는
-              삼각 구조 서비스
-            </p>
-            <a href="#contact" className="hero-cta">
-              광고 문의하기
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <path
-                  d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
-
-            <h1 className="hero-h1">
-              광고가 소비자 손에
-              <br />
-              <em>49분 동안</em> 머뭅니다
-            </h1>
 
             <p className="hero-p">
-              컵홀더에 실린 브랜드는 스킵 버튼이 없습니다.
+              컵홀더 광고를 통해 브랜드는 자연스럽게 노출되고,
               <br />
-              광고주의 비용으로 소비자에게 커피를 제공하고,
-              컵홀더가 브랜드를 49분 전달합니다.
+              소비자는 무료 커피를 받습니다.
             </p>
 
             <div className="hero-actions">
               <a href="#contact" className="btn-primary">
-                파트너십 문의하기
+                광고 문의하기
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                   <path d="M2 6.5h9M7.5 3L11 6.5 7.5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a href="#mvp" className="btn-ghost">
-                1차 MVP 결과 보기
+                MVP 결과 보기
               </a>
             </div>
 
@@ -138,19 +111,23 @@ export default function Home() {
         <section className="problem-section" id="problem">
           <div className="section">
             <div className="section-eyebrow">Problem</div>
-            <h2 className="section-h2">광고비가 사라지는 두 가지 방법</h2>
+            <h2 className="section-h2">
+              광고는 닿지 못하고,
+              <br />
+              소비자는 혜택을 원합니다.
+            </h2>
             <p className="section-sub" style={{ marginBottom: "2.5rem" }}>
-              온라인과 오프라인, 기존 광고는 같은 이유로 기억되지 않습니다.
+              기존 광고는 소비자와 분리되어 있습니다.
+              광고비는 사라지고, 소비자는 광고를 피합니다.
             </p>
 
-            <div className="problem-grid">
+            <div className="problem-grid problem-grid-3">
               <div className="problem-card fade-in">
                 <span className="problem-label">온라인 광고</span>
                 <span className="problem-stat">65%</span>
                 <h3>3초 안에 스킵됩니다</h3>
                 <p>
-                  유튜브 광고 스킵율은 65%를 넘습니다.
-                  인스타그램 피드에서 브랜드를 기억하는 사용자는 극소수입니다.
+                  유튜브·인스타그램 광고의 65% 이상이 3초 이내에 스킵됩니다.
                   예산이 클수록 낭비도 커집니다.
                 </p>
               </div>
@@ -158,26 +135,28 @@ export default function Home() {
               <div className="problem-card fade-in" data-delay="1">
                 <span className="problem-label">오프라인 광고</span>
                 <span className="problem-stat">2초</span>
-                <h3>소비자 손에 닿지 않습니다</h3>
+                <h3>성과를 측정할 수 없습니다</h3>
                 <p>
-                  전광판, 지하철, 현수막은 소비자가 능동적으로 볼 이유가 없습니다.
-                  평균 시선 유지 시간 2초 미만.
-                  물리적 거리가 관여도를 차단합니다.
+                  전광판·현수막의 평균 시선 유지 시간 2초 미만.
+                  얼마나 효과가 있는지 증명하기 어렵습니다.
+                </p>
+              </div>
+
+              <div className="problem-card fade-in" data-delay="2">
+                <span className="problem-label">소비자 현실</span>
+                <span className="problem-stat">₩0</span>
+                <h3>소비자가 원하는 건 혜택입니다</h3>
+                <p>
+                  광고를 강제하면 피합니다.
+                  커피를 무료로 제공하면 브랜드와 자연스럽게 연결됩니다.
                 </p>
               </div>
             </div>
 
             <div className="problem-callout fade-in">
-<<<<<<< HEAD
               소비자가{" "}
               <strong>1분 이상 자발적으로 집중하는 오프라인 광고 매체</strong>
               가 없습니다.
-=======
-              <div className="callout-highlight">
-                <strong>&#39;1분 이상 자발적으로 광고를 보는&#39;</strong>
-              </div>
-              <div className="callout-sub">오프라인 고관여 매체가 없습니다</div>
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
             </div>
           </div>
         </section>
@@ -189,14 +168,16 @@ export default function Home() {
           <div className="section" style={{ textAlign: "center" }}>
             <div className="section-eyebrow-center">Solution</div>
             <h2 className="section-h2" style={{ textAlign: "center" }}>
-              세 주체가 모두 이기는 구조
+              강제 광고가 아닌,
+              <br />
+              혜택 기반 광고 경험.
             </h2>
             <p
               className="section-sub"
               style={{ margin: "0 auto 3rem", textAlign: "center" }}
             >
-              광고주가 커피값을 내면, 플랫폼이 컵홀더를 제작·배포하고,
-              소비자는 49분 동안 브랜드를 손에 쥡니다.
+              광고주가 커피값을 내면, 소비자는 커피를 받고,
+              컵홀더가 브랜드를 49분 전달합니다.
             </p>
 
             <svg
@@ -211,7 +192,6 @@ export default function Home() {
                 <marker id="ah-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
                 </marker>
-<<<<<<< HEAD
                 <path id="lp" d="M 132 344 L 226 114" />
                 <path id="rp" d="M 334 114 L 428 344" />
               </defs>
@@ -233,62 +213,6 @@ export default function Home() {
               </text>
               <text fill="#7A6A5A" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
                 <textPath href="#rp" startOffset="12%">컵홀더 제작·배포</textPath>
-=======
-                {/* Paths for diagonal text labels */}
-                <path id="lp" d="M 155 340 L 220 120" />
-                <path id="rp" d="M 340 120 L 405 340" />
-              </defs>
-
-              {/* Arrows */}
-              <line
-                x1="155"
-                y1="340"
-                x2="220"
-                y2="120"
-                stroke="#3D1F0E"
-                strokeWidth="2.5"
-                markerEnd="url(#ah-dark)"
-              />
-              <line
-                x1="340"
-                y1="120"
-                x2="405"
-                y2="340"
-                stroke="#3D1F0E"
-                strokeWidth="2.5"
-                markerEnd="url(#ah-dark)"
-              />
-              <line
-                x1="376"
-                y1="400"
-                x2="184"
-                y2="400"
-                stroke="#F4A640"
-                strokeWidth="2.5"
-                markerEnd="url(#ah-accent)"
-              />
-
-              {/* Arrow labels via textPath (diagonal) */}
-              <text
-                fill="#3D1F0E"
-                fontSize="13"
-                fontWeight="600"
-                fontFamily="Pretendard, -apple-system, sans-serif"
-              >
-                <textPath href="#lp" startOffset="50%" textAnchor="middle" dy="-70">
-                  광고비 지불
-                </textPath>
-              </text>
-              <text
-                fill="#3D1F0E"
-                fontSize="13"
-                fontWeight="600"
-                fontFamily="Pretendard, -apple-system, sans-serif"
-              >
-                <textPath href="#rp" startOffset="50%" textAnchor="middle" dy="-70">
-                  컵홀더 제작·배포
-                </textPath>
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
               </text>
               <text x="280" y="432" textAnchor="middle" fill="#F4A640" fontSize="12" fontWeight="600" fontFamily="Pretendard, -apple-system, sans-serif">
                 커피 무료 수령
@@ -363,29 +287,54 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────── */}
-        {/* 4. STATS — KPI Section                    */}
+        {/* 4. METRICS                              */}
         {/* ─────────────────────────────────────── */}
-<<<<<<< HEAD
-        <section className="stats-section">
-          <div className="stats-grid">
-            {[
-              { num: "84",   unit: "%", label: "국내 FGI 광고 인지율",               delay: "0" },
-              { num: "51.5", unit: "%", label: "1시간 이상 노출 응답 비율",           delay: "1" },
-              { num: "49",   unit: "분", label: "해외 평균 슬리브 노출 시간 (AdQuick)", delay: "2" },
-              { num: "100",  unit: "%", label: "1차 MVP 커피 수용률",                 delay: "3" },
-            ].map((s) => (
-              <div key={s.label} className="stat-item fade-in" data-delay={s.delay}>
-                <span className="stat-num">
-                  {s.num}<span>{s.unit}</span>
-                </span>
-                <span className="stat-label">{s.label}</span>
-              </div>
-            ))}
+        <section className="metrics-section" id="metrics">
+          <div className="metrics-inner">
+            <div className="metrics-header fade-in">
+              <p className="metrics-eyebrow-label">1차 MVP 검증 데이터</p>
+              <h2 className="metrics-headline">직접 실험으로 확인한 숫자입니다.</h2>
+              <p className="metrics-sub-text">2025년 4월 · 숭실대 동방 동아리 18잔 배포</p>
+            </div>
+            <div className="metrics-grid">
+              {[
+                {
+                  eyebrow: "Average exposure",
+                  num: "49",
+                  unit: "분",
+                  label: "평균 광고 노출 시간",
+                  desc: "소비자가 자발적으로 컵홀더를 49분간 지니고 있었습니다. 해외 AdQuick 데이터와 일치.",
+                  delay: "0",
+                },
+                {
+                  eyebrow: "Coffee acceptance",
+                  num: "100",
+                  unit: "%",
+                  label: "커피 수용률",
+                  desc: "무료 커피 제공에 대한 거부감은 거의 없었습니다. 소비자는 기꺼이 광고 컵홀더를 받았습니다.",
+                  delay: "1",
+                },
+                {
+                  eyebrow: "Ad awareness",
+                  num: "84",
+                  unit: "%",
+                  label: "광고 인지율",
+                  desc: "컵홀더를 수령한 소비자의 84%가 광고를 인지했습니다. 국내 FGI 기준 최상위 수준.",
+                  delay: "2",
+                },
+              ].map((m) => (
+                <div key={m.label} className="metric-card fade-in" data-delay={m.delay}>
+                  <div className="metric-eyebrow-tag">{m.eyebrow}</div>
+                  <div className="metric-num">
+                    {m.num}<span className="metric-unit">{m.unit}</span>
+                  </div>
+                  <p className="metric-label">{m.label}</p>
+                  <p className="metric-desc">{m.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-=======
-        <KPISection />
->>>>>>> e91a2af9251caea565b04a99d6c15fde670cb5e1
 
         {/* ─────────────────────────────────────── */}
         {/* 5. BENEFITS                             */}
@@ -393,27 +342,28 @@ export default function Home() {
         <section className="why-section">
           <div className="section">
             <div className="section-eyebrow">Benefits</div>
-            <h2 className="section-h2">광고주가 얻는 것</h2>
+            <h2 className="section-h2">대학생 타깃에게 가장 가까운 광고 매체.</h2>
             <p className="section-sub" style={{ marginBottom: "2.5rem" }}>
-              기존 광고 채널이 해결하지 못한 세 가지를 컵홀더 광고가 해결합니다.
+              손에서 손으로 전달되는 브랜드 경험.
+              세 가지 이유로 컵홀더 광고를 선택합니다.
             </p>
 
             <div className="benefits-grid">
               {[
                 {
                   num: "01",
-                  title: "소비자가 광고를 들고 다닙니다",
-                  desc: "광고가 소비자 손 안에 있습니다. 스킵도, 외면도 없습니다. 커피를 마시는 20~40분 동안 브랜드와 1:1로 접촉합니다.",
+                  title: "광고가 소비자 손에 머뭅니다",
+                  desc: "스킵도, 외면도 없습니다. 커피를 마시는 49분 동안 브랜드가 소비자 손 안에 있습니다. 국내 오프라인 광고 중 가장 긴 집중 시간입니다.",
                 },
                 {
                   num: "02",
-                  title: "국내 최초, 선점할 수 있습니다",
-                  desc: "해외에서 AdQuick이 검증한 포맷입니다. 국내 도입 사례 0건. 경쟁사가 들어오기 전에 대학생 타깃 시장을 먼저 점유합니다.",
+                  title: "국내 최초, 선점 기회입니다",
+                  desc: "해외에서 AdQuick이 검증한 포맷입니다. 국내 도입 사례 0건. 경쟁 브랜드가 들어오기 전에 대학생 타깃 시장을 먼저 점유합니다.",
                 },
                 {
                   num: "03",
                   title: "QR로 성과를 측정합니다",
-                  desc: "클릭수, 체류시간, 쿠폰 전환율을 추적합니다. 감이 아니라 데이터로 광고 효과를 증명합니다.",
+                  desc: "클릭수, 체류시간, 쿠폰 전환율을 추적합니다. 감이 아니라 데이터로 광고 효과를 증명하고, 다음 캠페인을 개선합니다.",
                 },
               ].map((b) => (
                 <div key={b.num} className="benefit-card fade-in">
@@ -468,7 +418,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
@@ -531,9 +480,9 @@ export default function Home() {
                   </thead>
                   <tbody>
                     {([
-                      ["광고주",   "사주핑 (직접 섭외)",  "푸드 브랜드 (콜드메일 유치)"],
-                      ["디자인",   "단일 도안",           "3종 템플릿"],
-                      ["QR",       "앱 다운로드 링크",    "인터랙티브 콘텐츠 + 성과 측정"],
+                      ["광고주",    "사주핑 (직접 섭외)",  "푸드 브랜드 (콜드메일 유치)"],
+                      ["디자인",    "단일 도안",           "3종 템플릿"],
+                      ["QR",        "앱 다운로드 링크",    "인터랙티브 콘텐츠 + 성과 측정"],
                       ["배포 장소", "동방 (소규모)",       "학생회관 앞 (본격 배포)"],
                     ] as [string, string, string][]).map(([item, v1, v2]) => (
                       <tr key={item}>
@@ -556,7 +505,11 @@ export default function Home() {
           <div className="contact-inner">
             <span className="contact-eyebrow">2차 MVP · 파트너 모집</span>
             <h2 className="contact-h2">
-              지금 <em>첫 번째</em>로<br />자리를 잡으세요
+              무료 커피 경험을
+              <br />
+              함께 만들 <em>브랜드</em>를
+              <br />
+              찾고 있습니다.
             </h2>
             <p className="contact-sub">
               대학생 타깃 푸드·배달 브랜드를 우선으로 협의합니다.
@@ -572,7 +525,7 @@ export default function Home() {
               <input className="form-input" name="phone" type="tel" placeholder="연락처 *" required />
               <textarea className="form-input form-textarea" name="message" placeholder="문의내용 (선택사항)" />
               <button type="submit" className="form-submit">
-                문의 보내기
+                광고 제휴 문의하기
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                   <path d="M2 6.5h9M7.5 3L11 6.5 7.5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
