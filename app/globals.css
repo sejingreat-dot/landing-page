@@ -599,15 +599,16 @@ body {
 .bm-pill {
   position: absolute;
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-warm);
   border-radius: 999px;
-  padding: 0.28rem 0.7rem;
-  font-size: 0.7rem;
+  padding: 0.32rem 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--black);
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(28, 18, 8, 0.07);
+  box-shadow: 0 2px 10px rgba(28, 18, 8, 0.09);
   transform: translate(-50%, -50%);
+  line-height: 1.4;
 }
 
 /* SVG space 560×460: pill center → left: x/5.6%, top: y/4.6% */
@@ -1013,6 +1014,123 @@ body {
   display: block;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ── MVP 1 → 2 Evolution comparison ── */
+.mvp-evolution {
+  margin-bottom: 2.5rem;
+  padding: 1.625rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.mvp-evo-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.mvp-evo-cards {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+@media (max-width: 580px) {
+  .mvp-evo-cards { flex-direction: column; align-items: stretch; }
+  .mvp-evo-divider { transform: rotate(90deg); }
+}
+
+.mvp-evo-card {
+  flex: 1;
+  padding: 1.25rem 1.375rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  min-width: 0;
+}
+
+.mvp-evo-card--v1 {
+  background: var(--white);
+  opacity: 0.75;
+}
+
+.mvp-evo-card--v2 {
+  background: var(--white);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(244, 166, 64, 0.08);
+}
+
+.mvp-evo-tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.mvp-evo-card--v2 .mvp-evo-tag { color: var(--accent); }
+
+.mvp-evo-card h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.mvp-evo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.mvp-evo-list li {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.mvp-evo-list li::before {
+  content: '✓';
+  color: var(--text-tertiary);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  margin-top: 0.1em;
+}
+
+.mvp-evo-card--v2 .mvp-evo-list li::before {
+  content: '→';
+  color: var(--accent);
+}
+
+.mvp-evo-divider {
+  font-size: 1.375rem;
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.mvp-evo-sub {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
   font-weight: 500;
 }
 

@@ -75,7 +75,7 @@ export default function Home() {
             <p className="hero-p">
               컵홀더 광고를 통해 브랜드는 자연스럽게 노출되고,
               <br />
-              소비자는 무료 커피를 받습니다.
+              소비자는 무료 커피를 받습니다
             </p>
 
             <div className="hero-actions">
@@ -90,19 +90,6 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="hero-metrics">
-              {[
-                { num: "100%", label: "커피 수용률" },
-                { num: "84%",  label: "컵홀더 인지율" },
-                { num: "49분", label: "평균 노출 시간" },
-                { num: "0건",  label: "국내 경쟁 사례" },
-              ].map((m) => (
-                <div key={m.num} className="hero-metric">
-                  <span className="hero-metric-num">{m.num}</span>
-                  <span className="hero-metric-label">{m.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -172,14 +159,14 @@ export default function Home() {
             <h2 className="section-h2" style={{ textAlign: "center" }}>
               강제 광고가 아닌,
               <br />
-              혜택 기반 광고 경험.
+              혜택 기반 광고 경험
             </h2>
             <p
               className="section-sub"
               style={{ margin: "0 auto 3rem", textAlign: "center" }}
             >
               광고주가 커피값을 내면, 소비자는 커피를 받고,
-              컵홀더가 브랜드를 49분 전달합니다.
+              컵홀더가 브랜드를 30분 광고합니다
             </p>
 
             {/* Desktop / Mobile triangle diagram */}
@@ -188,10 +175,10 @@ export default function Home() {
                 <svg className="bm-lines" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <defs>
                     <marker id="bm-ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C4B5A5" />
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B8A898" />
                     </marker>
                     <marker id="bm-as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C4B5A5" />
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B8A898" />
                     </marker>
                     <marker id="bm-ae-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                       <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
@@ -200,9 +187,8 @@ export default function Home() {
                       <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
                     </marker>
                   </defs>
-                  <polygon points="280,72 78,432 482,432" fill="rgba(244,166,64,0.04)" stroke="#E2D5C6" strokeWidth="1.5" strokeDasharray="5,4" />
-                  <line x1="130" y1="404" x2="225" y2="72" stroke="#C4B5A5" strokeWidth="2" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
-                  <line x1="335" y1="72" x2="430" y2="404" stroke="#C4B5A5" strokeWidth="2" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
+                  <line x1="130" y1="404" x2="225" y2="72" stroke="#B8A898" strokeWidth="2.5" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
+                  <line x1="335" y1="72" x2="430" y2="404" stroke="#B8A898" strokeWidth="2.5" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
                   <line x1="156" y1="450" x2="404" y2="450" stroke="#F4A640" strokeWidth="1.8" strokeDasharray="5,3" markerStart="url(#bm-as-a)" markerEnd="url(#bm-ae-a)" />
                 </svg>
 
@@ -213,11 +199,11 @@ export default function Home() {
                 <div className="bm-node bm-node--adv"><span>광고주</span></div>
                 <div className="bm-node bm-node--con"><span>소비자</span></div>
 
-                <div className="bm-pill bm-pill--1">📊 성과 데이터</div>
+                <div className="bm-pill bm-pill--1">📊 성과 리포트 제공</div>
                 <div className="bm-pill bm-pill--2">💰 광고비 지불</div>
-                <div className="bm-pill bm-pill--3">☕ 무료 커피</div>
-                <div className="bm-pill bm-pill--4">⏱ 브랜드 노출 40분</div>
-                <div className="bm-pill bm-pill--5">🎯 커피 무료 수령</div>
+                <div className="bm-pill bm-pill--3">☕ 무료 커피 제공</div>
+                <div className="bm-pill bm-pill--4">⏱ 브랜드 노출 30분</div>
+                <div className="bm-pill bm-pill--5">간접 연결</div>
               </div>
 
               <div className="bm-mobile">
@@ -234,14 +220,14 @@ export default function Home() {
                   <div className="bm-m-col">
                     <div className="bm-m-pill">☕ 무료 커피</div>
                     <div className="bm-m-arrow">↕</div>
-                    <div className="bm-m-pill">⏱ 브랜드 노출</div>
+                    <div className="bm-m-pill">⏱ 노출 30분</div>
                   </div>
                 </div>
                 <div className="bm-m-bottom">
                   <div className="bm-m-node bm-m-node--adv"><span>광고주</span></div>
                   <div className="bm-m-node bm-m-node--con"><span>소비자</span></div>
                 </div>
-                <div className="bm-m-indirect">🎯 커피 무료 수령 (간접 연결)</div>
+                <div className="bm-m-indirect">🎯 간접 연결</div>
               </div>
             </div>
 
@@ -317,7 +303,7 @@ export default function Home() {
                 {
                   num: "01",
                   title: "광고가 소비자 손에 머뭅니다",
-                  desc: "스킵도, 외면도 없습니다. 커피를 마시는 49분 동안 브랜드가 소비자 손 안에 있습니다. 국내 오프라인 광고 중 가장 긴 집중 시간입니다.",
+                  desc: "스킵도, 외면도 없습니다. 커피를 마시는 30분 동안 브랜드가 소비자 손 안에 있습니다. 국내 오프라인 광고 중 가장 긴 집중 시간입니다.",
                 },
                 {
                   num: "02",
@@ -327,7 +313,7 @@ export default function Home() {
                 {
                   num: "03",
                   title: "QR로 성과를 측정합니다",
-                  desc: "클릭수, 체류시간, 쿠폰 전환율을 추적합니다. 감이 아니라 데이터로 광고 효과를 증명하고, 다음 캠페인을 개선합니다.",
+                  desc: "클릭수, 체류시간, QR 참여율을 추적합니다 감이 아니라 데이터로 광고 효과를 증명하고, 다음 캠페인을 개선합니다.",
                 },
               ].map((b) => (
                 <div key={b.num} className="benefit-card fade-in">
@@ -400,7 +386,7 @@ export default function Home() {
               {[
                 { num: "100%", label: "커피 수용률" },
                 { num: "84%",  label: "컵홀더 광고 인지율" },
-                { num: "49분", label: "자발적 평균 노출 시간" },
+                { num: "30분", label: "자발적 평균 노출 시간" },
               ].map((r) => (
                 <div key={r.num} className="mvp-result-card">
                   <span className="mvp-result-num">{r.num}</span>
@@ -411,6 +397,7 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* ─────────────────────────────────────── */}
         {/* 7. ROADMAP                              */}
         {/* ─────────────────────────────────────── */}
@@ -419,33 +406,62 @@ export default function Home() {
             <div className="section-eyebrow">Roadmap</div>
             <h2 className="section-h2">2차 MVP 계획</h2>
             <p className="section-sub" style={{ marginBottom: "2.5rem" }}>
-              1차 검증을 바탕으로, 실제 브랜드와 함께하는 본격 캠페인을 준비합니다.
+              1차 검증을 바탕으로, 실제 광고비를 받는 비즈니스 모델을 검증합니다
             </p>
+
+            {/* ── 1차 → 2차 핵심 발전 ── */}
+            <div className="mvp-evolution fade-in">
+              <p className="mvp-evo-label">핵심 발전 포인트</p>
+              <div className="mvp-evo-cards">
+                <div className="mvp-evo-card mvp-evo-card--v1">
+                  <span className="mvp-evo-tag">1차 MVP · 완료</span>
+                  <h4>소비자 반응 검증</h4>
+                  <ul className="mvp-evo-list">
+                    <li>커피 수용률 측정 (100%)</li>
+                    <li>광고 인지율 측정 (84%)</li>
+                    <li>자발적 체류 시간 검증 (30분)</li>
+                  </ul>
+                </div>
+                <div className="mvp-evo-divider">→</div>
+                <div className="mvp-evo-card mvp-evo-card--v2">
+                  <span className="mvp-evo-tag">2차 MVP · 진행 중</span>
+                  <h4>비즈니스 모델 검증</h4>
+                  <ul className="mvp-evo-list">
+                    <li>광고주 직접 컨택·유치</li>
+                    <li>실제 광고비 수령 구조 검증</li>
+                    <li>광고 수익화 가능성 확인</li>
+                  </ul>
+                </div>
+              </div>
+              <p className="mvp-evo-sub">
+                단순 노출 실험 → 실제 광고비를 받는 비즈니스 모델 검증으로 발전
+              </p>
+            </div>
 
             <div className="step-grid">
               {[
                 {
                   num: "STEP 01",
                   title: "타깃 기업 리스트업",
-                  desc: "20대 대학생 타깃 푸드 브랜드 중심. 배달·식품 앱, 캠퍼스 주변 프랜차이즈 리스트업",
+                  desc: "어문 교육 스타트업, 데이팅 앱 스타트업, 배달앱 스타트업 중심으로 20대 대학생 타깃 광고주 리스트업",
                   delay: "0",
                 },
                 {
                   num: "STEP 02",
                   title: "콜드메일 발송",
-                  desc: "기획서 + 1차 MVP 수치(수용률 100%, 노출 49분) + 도안 샘플 패키지로 구성",
+                  desc: "기획서 + 1차 MVP 수치(수용률 100%, 노출 30분) + 도안 샘플 패키지로 구성",
                   delay: "1",
                 },
                 {
                   num: "STEP 03",
                   title: "제작물 준비",
-                  desc: "컵홀더 도안 템플릿 3종(B급 감성 / 고퀄 / 자연스러운 버전) + QR 인터랙티브 랜딩",
+                  desc: "컵홀더 도안 템플릿 3종 제공 — 스탠다드형 / 텍스트 강조형 / 참여형 + QR 인터랙티브 랜딩",
                   delay: "2",
                 },
                 {
                   num: "STEP 04–06",
                   title: "컨택 → 배포 → 측정",
-                  desc: "숭실대 학생회관 앞 배포. QR 클릭수·체류시간·인터랙티브 참여율·쿠폰 전환율 측정",
+                  desc: "숭실대 학생회관 앞 배포. QR 클릭수·체류시간·인터랙티브 참여율 측정",
                   delay: "3",
                 },
               ].map((s) => (
@@ -470,10 +486,11 @@ export default function Home() {
                   </thead>
                   <tbody>
                     {([
-                      ["광고주",    "사주핑 (직접 섭외)",  "푸드 브랜드 (콜드메일 유치)"],
-                      ["디자인",    "단일 도안",           "3종 템플릿"],
-                      ["QR",        "앱 다운로드 링크",    "인터랙티브 콘텐츠 + 성과 측정"],
-                      ["배포 장소", "동방 (소규모)",       "학생회관 앞 (본격 배포)"],
+                      ["목표",      "소비자 반응 검증",         "광고 수익화 구조 검증"],
+                      ["광고주",    "사주핑 (직접 섭외)",        "스타트업 (콜드메일 유치)"],
+                      ["디자인",    "단일 도안",                "3종 템플릿"],
+                      ["QR",        "앱 다운로드 링크",          "인터랙티브 콘텐츠 + 성과 측정"],
+                      ["배포 장소", "동방 (소규모)",             "학생회관 앞 (본격 배포)"],
                     ] as [string, string, string][]).map(([item, v1, v2]) => (
                       <tr key={item}>
                         <td className="compare-item">{item}</td>
@@ -502,7 +519,7 @@ export default function Home() {
               찾고 있습니다.
             </h2>
             <p className="contact-sub">
-              대학생 타깃 푸드·배달 브랜드를 우선으로 협의합니다.
+              어문 교육·데이팅·배달앱 스타트업을 우선으로 협의합니다
             </p>
 
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
