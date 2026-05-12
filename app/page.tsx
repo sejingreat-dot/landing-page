@@ -372,7 +372,7 @@ export default function Home() {
               </div>
               <div className="mvp-showcase-main">
                 <img
-                  src="/sajuping-cupholder.png.webp"
+                  src="/sajuping-cupholder.png"
                   alt="사주핑 × 컵홀더 광고 1차 MVP 도안"
                   className="mvp-showcase-img"
                 />
