@@ -169,67 +169,11 @@ export default function Home() {
               컵홀더가 브랜드를 30분 광고합니다
             </p>
 
-            {/* Desktop / Mobile triangle diagram */}
-            <div className="bm-wrap">
-              <div className="bm-desktop">
-                <svg className="bm-lines" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <defs>
-                    <marker id="bm-ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B8A898" />
-                    </marker>
-                    <marker id="bm-as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B8A898" />
-                    </marker>
-                    <marker id="bm-ae-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
-                    </marker>
-                    <marker id="bm-as-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F4A640" />
-                    </marker>
-                  </defs>
-                  <line x1="130" y1="404" x2="225" y2="72" stroke="#B8A898" strokeWidth="2.5" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
-                  <line x1="335" y1="72" x2="430" y2="404" stroke="#B8A898" strokeWidth="2.5" markerStart="url(#bm-as)" markerEnd="url(#bm-ae)" />
-                  <line x1="156" y1="450" x2="404" y2="450" stroke="#F4A640" strokeWidth="1.8" strokeDasharray="5,3" markerStart="url(#bm-as-a)" markerEnd="url(#bm-ae-a)" />
-                </svg>
-
-                <div className="bm-node bm-node--fc">
-                  <span className="bm-fc-title">FREE COFFEE</span>
-                  <span className="bm-fc-sub">플랫폼</span>
-                </div>
-                <div className="bm-node bm-node--adv"><span>광고주</span></div>
-                <div className="bm-node bm-node--con"><span>소비자</span></div>
-
-                <div className="bm-pill bm-pill--1">📊 성과 리포트 제공</div>
-                <div className="bm-pill bm-pill--2">💰 광고비 지불</div>
-                <div className="bm-pill bm-pill--3">☕ 무료 커피 제공</div>
-                <div className="bm-pill bm-pill--4">⏱ 브랜드 노출 30분</div>
-                <div className="bm-pill bm-pill--5">간접 연결</div>
-              </div>
-
-              <div className="bm-mobile">
-                <div className="bm-m-node bm-m-node--fc">
-                  <b>FREE COFFEE</b>
-                  <span>플랫폼</span>
-                </div>
-                <div className="bm-m-mid">
-                  <div className="bm-m-col">
-                    <div className="bm-m-pill">💰 광고비 지불</div>
-                    <div className="bm-m-arrow">↕</div>
-                    <div className="bm-m-pill">📊 성과 데이터</div>
-                  </div>
-                  <div className="bm-m-col">
-                    <div className="bm-m-pill">☕ 무료 커피</div>
-                    <div className="bm-m-arrow">↕</div>
-                    <div className="bm-m-pill">⏱ 노출 30분</div>
-                  </div>
-                </div>
-                <div className="bm-m-bottom">
-                  <div className="bm-m-node bm-m-node--adv"><span>광고주</span></div>
-                  <div className="bm-m-node bm-m-node--con"><span>소비자</span></div>
-                </div>
-                <div className="bm-m-indirect">🎯 간접 연결</div>
-              </div>
-            </div>
+            <img
+              src="/business-model.png"
+              alt="비즈니스 모델"
+              style={{ width: "100%", maxWidth: "560px", margin: "0 auto 2.5rem", display: "block" }}
+            />
 
             {/* Service flow visual */}
             <div className="flow-steps fade-in" data-delay="2">
