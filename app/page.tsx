@@ -166,7 +166,7 @@ export default function Home() {
               style={{ margin: "0 auto 3rem", textAlign: "center" }}
             >
               광고주가 커피값을 내면, 소비자는 커피를 받고,
-              컵홀더가 브랜드를 30분 광고합니다
+              컵홀더가 브랜드를 30분 동안 광고합니다
             </p>
 
             <img
