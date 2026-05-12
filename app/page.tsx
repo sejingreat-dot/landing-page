@@ -236,7 +236,7 @@ export default function Home() {
         <section className="why-section">
           <div className="section">
             <div className="section-eyebrow">Benefits</div>
-            <h2 className="section-h2">대학생 타깃에게 가장 가까운 광고 매체.</h2>
+            <h2 className="section-h2">대학생 타깃에게 가장 가까운 광고 매체</h2>
             <p className="section-sub" style={{ marginBottom: "2.5rem" }}>
               손에서 손으로 전달되는 브랜드 경험.
               세 가지 이유로 컵홀더 광고를 선택합니다.
