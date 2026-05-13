@@ -170,7 +170,7 @@ export default function Home() {
             </p>
 
             <img
-              src="/business-model.png"
+              src="/business-model-v2.png"
               alt="비즈니스 모델"
               style={{ width: "100%", maxWidth: "560px", margin: "0 auto 2.5rem", display: "block" }}
             />
